@@ -84,7 +84,7 @@ The recommended build order:
 
 | Phase | What | Complexity |
 |-------|------|------------|
-| 1 | Memory Layer (SOUL.md, USER.md, MEMORY.md, daily logs) | Low |
+| 1 | Memory Layer (BOOTSTRAP.md, SOUL.md, USER.md, MEMORY.md, daily logs) | Low |
 | 2 | Hooks (SessionStart, PreCompact, SessionEnd) | Medium |
 | 3 | Memory Search (hybrid keyword + semantic) | Medium |
 | 4 | Integrations (your top 3 platforms) | Medium each |
@@ -94,12 +94,26 @@ The recommended build order:
 | 8 | Security Hardening (sanitization, guardrails) | Medium |
 | 9 | Deployment (local scheduler or VPS) | Medium |
 
+## Starter Templates
+
+This repo ships a ready-to-use `templates/memory/` folder so you don't start from a blank page. Copy it into your vault and customize:
+
+- **BOOTSTRAP.md** - a first-run onboarding wizard. On your very first session it interviews you one question at a time (name, role, timezone, communication style, integrations, proactivity), fills in USER.md, SOUL.md, and HEARTBEAT.md for you, then deletes itself.
+- **SOUL.md** - how your agent behaves: identity, values, communication style, boundaries.
+- **USER.md** - about you and your company: profile, team, accounts, preferences.
+- **MEMORY.md**, **HEARTBEAT.md**, **HABITS.md**, **daily/** - the rest of the memory layer.
+
+```bash
+cp -r templates/memory your-vault/Memory
+```
+
 ## Architecture Overview
 
 The second brain is built on Claude Code and the Claude Agent SDK. No massive framework - just markdown files, Python scripts, and an Obsidian vault.
 
 ```
 Memory Layer (center of everything)
+    BOOTSTRAP.md - First-run onboarding wizard (writes SOUL/USER, then self-deletes)
     SOUL.md - Agent personality, values, boundaries
     USER.md - Your profile, accounts, preferences
     MEMORY.md - Key decisions, lessons, active projects

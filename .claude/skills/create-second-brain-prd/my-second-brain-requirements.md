@@ -10,6 +10,8 @@
 - **Role/Title:** ___
 - **What I do daily** (1-2 sentences): ___
 - **Timezone:** ___
+- **Memory vault folder name:** ___ (e.g., "SecondBrain", "MyVault", "Memory" — this is the root folder for all your memory files)
+- **Using Obsidian?** [ ] Yes [ ] No (Obsidian is optional — the vault is just a folder of markdown files. Obsidian provides a nice UI for browsing/editing them, but everything works without it.)
 
 ---
 
